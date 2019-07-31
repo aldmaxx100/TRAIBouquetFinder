@@ -4,7 +4,6 @@ from full_file import load_data
 from get_details import pack_details
 api = Flask(__name__)
 
-#data="aldrin"
 
 
 
