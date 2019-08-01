@@ -34,10 +34,6 @@ def get_pack_channels(pack):
     #print(pack)
     #print("in get pack")
     while(1):
-        if bouquet.cell(i,0).value=="":
-            print ("blank")
-        else:
-            print(bouquet.cell(i,0).value)
         if bouquet.cell(i,0).value==pack or flag==1:
             if bouquet.cell(i,0).value!="" and bouquet.cell(i,0).value!=pack:
                 return included_channels
