@@ -1,11 +1,13 @@
 
 from full_file import book
 
+bouquet = book.sheet_by_index(0)
+single = book.sheet_by_index(1)
+
+
 def pack_details(pack):
     return_list=[]
     list=pack.split('####')
-    bouquet=book.sheet_by_index(0)
-    single=book.sheet_by_index(1)
 
 
     for pack in list:
@@ -20,9 +22,30 @@ def pack_details(pack):
         else:
             for r in range(bouquet.nrows):
                 if pack==bouquet.cell(r,0).value:
-                    return_list.append([pack,bouquet.cell(r,2).value,"bouquet"])
 
+                    return_list.append([pack,bouquet.cell(r,2).value,"bouquet",get_pack_channels(pack)])
 
     return (return_list)
+
+def get_pack_channels(pack):
+    included_channels=[]
+    flag=0
+    i=0
+    #print(pack)
+    #print("in get pack")
+    while(1):
+        if bouquet.cell(i,0).value=="":
+            print ("blank")
+        else:
+            print(bouquet.cell(i,0).value)
+        if bouquet.cell(i,0).value==pack or flag==1:
+            if bouquet.cell(i,0).value!="" and bouquet.cell(i,0).value!=pack:
+                return included_channels
+            else:
+                flag=1
+                included_channels.append(bouquet.cell(i,1).value)
+
+        i=i+1
+
 
 
