@@ -20,4 +20,5 @@ API.
 The main program is API.py that creates a FLASK api listening on 
 specified port.
 
+start point in Project is in main_api.py
 PEACE OUT!!!
